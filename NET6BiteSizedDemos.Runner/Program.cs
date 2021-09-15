@@ -16,3 +16,6 @@ linqOrDefaultExamples.Examples();
 
 LINQChunkExamples linqChunkExamples = new();
 linqChunkExamples.Examples();
+
+LINQSetByExamples linqMaxByMinByExamples = new();
+linqMaxByMinByExamples.Examples();

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NET6BiteSizeDemos
+﻿namespace NET6BiteSizeDemos
 {
     public class LINQOrDefaultExamples
     {
@@ -19,12 +13,12 @@ namespace NET6BiteSizeDemos
             //We can use SingleOrDefault for this.
             var singleNumber = numbers.SingleOrDefault(x => x > 20);
 
-            //But the collection doesn't have *any* numbers > 20, so what get's returned?
-            //The default value of the collection's type, e.g. the default value for int, e.g. zero.
-            Console.WriteLine($"A number greater than 20: {singleNumber}");
+            //But the collection doesn't have *any* numbers > 20, so what gets returned?
+            //The default value of the collection's type, e.g. the default value for int: zero.
+            Console.WriteLine($"A number greater than 20: {singleNumber}"); //A number greater than 20: 0
 
-            //But what if we wanted to return -1 instead of 0? .NET 5 and earlier provider no native way to do that.
-            //In .NET 6 though, we can specify the value to return in any "OrDefault" LINQ method.
+            //But what if we wanted to return -1 instead of 0? .NET 5 and earlier provided no native way to do that.
+            //In .NET 6, we can specify the value to return in any "OrDefault" LINQ method.
             Console.WriteLine($"A number greater than 20: {numbers.SingleOrDefault(x => x > 20, -1)}");
 
             //We can also do this with FirstOrDefault or LastOrDefault
