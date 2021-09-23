@@ -17,26 +17,27 @@ namespace NET6BiteSizeDemos
 
             var myWords = new Queue<string>();
 
-            myWords.Enqueue("First");
-            myWords.Enqueue("Second");
-            myWords.Enqueue("Third");
+            myWords.Enqueue("Alex");
+            myWords.Enqueue("Leah");
+            myWords.Enqueue("Haley");
+            myWords.Enqueue("Harvey");
 
-            Console.WriteLine(myWords.Dequeue()); //First
-            Console.WriteLine(myWords.Dequeue()); //Second
-            Console.WriteLine(myWords.Dequeue()); //Third
+            Console.WriteLine(myWords.Dequeue()); //Alex
+            Console.WriteLine(myWords.Dequeue()); //Leah
+            Console.WriteLine(myWords.Dequeue()); //Haley
 
             //.NET 6 introduces a new class, PriorityQueue<T, N>, where the order of the elements is determined by a 
             //priority value which is given when an item is enqueued.
             PriorityQueue<string, int> priorityWords = new();
-            priorityWords.Enqueue("Second", 2);
-            priorityWords.Enqueue("Fourth", 4);
-            priorityWords.Enqueue("Third", 3);
-            priorityWords.Enqueue("First", 1);
+            priorityWords.Enqueue("Leah", 2);
+            priorityWords.Enqueue("Harvey", 4);
+            priorityWords.Enqueue("Haley", 3);
+            priorityWords.Enqueue("Alex", 1);
 
-            Console.WriteLine(priorityWords.Dequeue()); //First
-            Console.WriteLine(priorityWords.Dequeue()); //Second
-            Console.WriteLine(priorityWords.Dequeue()); //Third
-            Console.WriteLine(priorityWords.Dequeue()); //Fourth
+            Console.WriteLine(priorityWords.Dequeue()); //Alex
+            Console.WriteLine(priorityWords.Dequeue()); //Leah
+            Console.WriteLine(priorityWords.Dequeue()); //Haley
+            Console.WriteLine(priorityWords.Dequeue()); //Harvey
 
             //In a PriorityQueue, the priority value can be any primitive type.
             //For example, we could use the enum ShowRating (defined below) to rank some TV shows.

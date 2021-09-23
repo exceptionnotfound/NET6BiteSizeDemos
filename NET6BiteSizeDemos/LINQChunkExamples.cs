@@ -38,6 +38,9 @@ namespace NET6BiteSizeDemos
             //The method returns an IEnumerable<int[]>, or a collection of collections.
             IEnumerable<int[]> sublists = numbers.Chunk(10);
 
+            //Child collections will be comprised of 10 elements each.
+            //This just happens to result in 10 collections of 10 elements each.
+
             //Now, if we want to, say, get the average of the 6th collection, it's really easy to do so.
             Console.WriteLine("The average of the sixth collection is " + sublists.ElementAt(6).Average() + ". This number will be different every time you run the app.");
         }
