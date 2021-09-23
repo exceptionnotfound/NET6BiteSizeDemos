@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET6BiteSizeDemos", "NET6BiteSizeDemos\NET6BiteSizeDemos.csproj", "{A355CEFE-8784-4410-8D45-1596FEB5C1CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NET6BiteSizeDemos", "NET6BiteSizeDemos\NET6BiteSizeDemos.csproj", "{A355CEFE-8784-4410-8D45-1596FEB5C1CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET6BiteSizedDemos.Runner", "NET6BiteSizedDemos.Runner\NET6BiteSizedDemos.Runner.csproj", "{E56850A4-D1E4-44ED-AF07-8E03839E8987}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NET6BiteSizedDemos.Runner", "NET6BiteSizedDemos.Runner\NET6BiteSizedDemos.Runner.csproj", "{E56850A4-D1E4-44ED-AF07-8E03839E8987}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET6BiteSizedDemos.MinimalAPIs", "NET6BiteSizedDemos.MinimalAPIs\NET6BiteSizedDemos.MinimalAPIs.csproj", "{722FC8D1-1A3D-4C48-B8DE-6868F2968E7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{E56850A4-D1E4-44ED-AF07-8E03839E8987}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E56850A4-D1E4-44ED-AF07-8E03839E8987}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E56850A4-D1E4-44ED-AF07-8E03839E8987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{722FC8D1-1A3D-4C48-B8DE-6868F2968E7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{722FC8D1-1A3D-4C48-B8DE-6868F2968E7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{722FC8D1-1A3D-4C48-B8DE-6868F2968E7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{722FC8D1-1A3D-4C48-B8DE-6868F2968E7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
