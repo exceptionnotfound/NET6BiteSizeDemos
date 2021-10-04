@@ -38,10 +38,13 @@ namespace NET6BiteSizeDemos
             int dayNumber = integerTest.DayNumber;
             DateOnly integerResult = DateOnly.FromDayNumber(dayNumber); //July 1st 2019
 
+            //DateOnly keeps track of the machine's culture, so when the item is output
+            //the culture is respected.
             DateOnly cultureExample = new DateOnly(2004, 5, 19); //May 19 2004
             Console.WriteLine(cultureExample);
             //American: 5/19/2004, European: 19/5/2004, Universal: 2004-05-19
 
+            //We can add days, months, or years to a DateOnly object.
             DateOnly addTimeExample = new DateOnly(2004, 5, 19); //May 19 2004
             addTimeExample = addTimeExample.AddYears(2).AddMonths(2).AddDays(5);
             //Jul 24th, 2006
