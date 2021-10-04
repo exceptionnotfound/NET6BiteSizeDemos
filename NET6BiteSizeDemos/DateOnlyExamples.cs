@@ -37,6 +37,14 @@ namespace NET6BiteSizeDemos
             DateOnly integerTest = new(2019, 7, 1); //July 1st 2019
             int dayNumber = integerTest.DayNumber;
             DateOnly integerResult = DateOnly.FromDayNumber(dayNumber); //July 1st 2019
+
+            DateOnly cultureExample = new DateOnly(2004, 5, 19); //May 19 2004
+            Console.WriteLine(cultureExample);
+            //American: 5/19/2004, European: 19/5/2004, Universal: 2004-05-19
+
+            DateOnly addTimeExample = new DateOnly(2004, 5, 19); //May 19 2004
+            addTimeExample = addTimeExample.AddYears(2).AddMonths(2).AddDays(5);
+            //Jul 24th, 2006
         }
     }
 }

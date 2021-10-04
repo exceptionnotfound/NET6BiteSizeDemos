@@ -22,10 +22,11 @@ namespace NET6BiteSizeDemos
             //Similarly, we can use Where and MaxBy to get the youngest person born before 1995.
             var youngestBornBefore1995 = users.Where(x=>x.DateOfBirth.Year < 1995).MaxBy(x => x.DateOfBirth.Year); //Terrance Johnson
 
-            //There is also a method MinBy, which we can use to do things like get the first person in the list by last name
-            var lastNameAlphabaticalFirstPerson = users.MinBy(x => x.LastName); //Jackson Browne
+            //We could also find the first person alphabetically by last name
+            var firstPersonAlphaByLastName = users.MinBy(x => x.LastName); //Jackson Browne
 
-            //The By methods also come in handy when dealing with sets. Let's get a second set of people and combine it with the first set.
+            //The By methods also come in handy when dealing with sets. Let's get a second set of people
+            //and combine it, it in different ways, with the first set.
             var users2 = GetUserList2();
 
             //UnionBy gets the union of two sets, where items in the union have distinct values for the specified selector
@@ -48,84 +49,86 @@ namespace NET6BiteSizeDemos
             //For example, we can use ExceptBy to return all users who do not have any of a set of first names.
             var names = new List<string>() { "Hailee", "Jackson", "Jeremy" };
             var exceptByFirstName = users.ExceptBy(names, x => x.FirstName);
+
+            var intersectionBirthYearReverse = users2.IntersectBy(users.Select(x => x.DateOfBirth.Year), x => x.DateOfBirth.Year);
         }
 
-        private List<User> GetUserList()
-        {
-            return new List<User>()
-            {
-                new User()
-                {
-                    ID = 1,
-                    FirstName = "Terrance",
-                    LastName = "Johnson",
-                    DateOfBirth = new DateTime(1985, 12, 6)
-                },
-                new User()
-                {
-                    ID = 2,
-                    FirstName = "Angelica",
-                    LastName = "Johnson",
-                    DateOfBirth = new DateTime(1984, 8, 22)
-                },
-                new User()
-                {
-                    ID = 3,
-                    FirstName = "Jackson",
-                    LastName = "Browne",
-                    DateOfBirth = new DateTime(2001, 7, 29)
-                },
-                new User()
-                {
-                    ID = 4,
-                    FirstName = "Hailee",
-                    LastName = "Escobar",
-                    DateOfBirth = new DateTime(2004, 1, 16)
-                }
-            };
-        }
-
-        private List<User> GetUserList2()
-        {
-            return new List<User>()
-            {
-                new User()
-                {
-                    ID = 1,
-                    FirstName = "Jeremy",
-                    LastName = "Yardling",
-                    DateOfBirth = new DateTime(2001, 6, 1)
-                },
-                new User()
-                {
-                    ID = 2,
-                    FirstName = "Toni",
-                    LastName = "Berkowitz",
-                    DateOfBirth = new DateTime(2004, 1, 16)
-                },
-                new User()
-                {
-                    ID = 3,
-                    FirstName = "Vanessa",
-                    LastName = "Warren",
-                    DateOfBirth = new DateTime(1975, 10, 11)
-                },
-                new User()
-                {
-                    ID = 4,
-                    FirstName = "Lawrence",
-                    LastName = "Neilson",
-                    DateOfBirth = new DateTime(1966, 9, 30)
-                }
-            };
-        }
-    }
-
-    public class User
+    private List<User> GetUserList()
     {
-        public int ID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        return new List<User>()
+        {
+            new User()
+            {
+                ID = 1,
+                FirstName = "Terrance",
+                LastName = "Johnson",
+                DateOfBirth = new DateTime(1985, 12, 6)
+            },
+            new User()
+            {
+                ID = 2,
+                FirstName = "Angelica",
+                LastName = "Johnson",
+                DateOfBirth = new DateTime(1984, 8, 22)
+            },
+            new User()
+            {
+                ID = 3,
+                FirstName = "Jackson",
+                LastName = "Browne",
+                DateOfBirth = new DateTime(2001, 7, 29)
+            },
+            new User()
+            {
+                ID = 4,
+                FirstName = "Hailee",
+                LastName = "Escobar",
+                DateOfBirth = new DateTime(2004, 1, 16)
+            }
+        };
     }
+
+    private List<User> GetUserList2()
+    {
+        return new List<User>()
+        {
+            new User()
+            {
+                ID = 1,
+                FirstName = "Jeremy",
+                LastName = "Yardling",
+                DateOfBirth = new DateTime(2001, 6, 1)
+            },
+            new User()
+            {
+                ID = 2,
+                FirstName = "Toni",
+                LastName = "Berkowitz",
+                DateOfBirth = new DateTime(2004, 1, 16)
+            },
+            new User()
+            {
+                ID = 3,
+                FirstName = "Vanessa",
+                LastName = "Warren",
+                DateOfBirth = new DateTime(1975, 10, 11)
+            },
+            new User()
+            {
+                ID = 4,
+                FirstName = "Lawrence",
+                LastName = "Neilson",
+                DateOfBirth = new DateTime(1966, 9, 30)
+            }
+        };
+    }
+    }
+
+public class User
+{
+    public int ID { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public DateTime DateOfBirth { get; set; }
+}
 }
