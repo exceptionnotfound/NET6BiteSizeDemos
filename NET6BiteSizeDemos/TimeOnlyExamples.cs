@@ -36,7 +36,7 @@ namespace NET6BiteSizeDemos
             //occurs in a specific time range
             var now = TimeOnly.FromDateTime(DateTime.Now);
             var nineAM = new TimeOnly(9, 0);
-            var fivePM = new TimeOnly(15, 0);
+            var fivePM = new TimeOnly(17, 0);
 
             if(now.IsBetween(nineAM, fivePM))
                 Console.WriteLine("Work time!");
